@@ -18,32 +18,40 @@ Make sure you have Python installed on your system. You will also need to instal
 
 ```bash
 pip install google-genai tkintermapview requests
+```
 
-2. Clone the Repository
+### 2. Clone the Repository
 
+Run the clone command to download the project files, then navigate into the folder:
+
+```bash
 git clone [https://github.com/akica66/atlas-geography-ai.git](https://github.com/akica66/atlas-geography-ai.git)
 cd atlas-geography-ai
+```
 
-### 3. Configure your environment keys:
+### 3. Configure your environment keys
 
 This project uses masked environment variables to protect personal API credentials.
 
-1. Locate the .env.example file in the root directory.
+1. Locate the `.env.example` file in the root directory.
 
-2. Duplicate the file and rename the copy to exactly .env.
+2. Duplicate the file and rename the copy to exactly `.env`.
 
-3. Open .env and paste your personal API keys into the placeholders (do not add extra spaces):
+3. Open `.env` and paste your personal API keys into the placeholders (do not add extra spaces):
 
+```
 GEMINI_API_KEY=AIzaSyYourActualGeminiKeyHere
 TOMTOM_API_KEY=YourActualTomTomKeyHere
+```
 
-Note: The .env file is explicitly ignored by git configuration and will never be pushed to public repositories.
+Note: The `.env` file is explicitly ignored by git configuration and will never be pushed to public repositories.
 
-### 4. How to Run: 
+### 4. How to Run
 
 Launch the application terminal interface by executing the main script:
 
 ```bash
 python bot.py
+```
 
 Type a question or name a unique geographic anomaly (e.g., "Tell me about the Baarle-Nassau enclave" or "Where is the source of the Nile?") and watch the tracker sync live!
