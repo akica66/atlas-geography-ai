@@ -19,7 +19,7 @@ Make sure you have Python installed on your system. You will also need to instal
 ```bash
 pip install google-genai tkintermapview requests
 
-### 2. Clone the repository:
+2. Clone the Repository
 
 git clone [https://github.com/akica66/atlas-geography-ai.git](https://github.com/akica66/atlas-geography-ai.git)
 cd atlas-geography-ai
