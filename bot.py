@@ -14,7 +14,6 @@ class AtlasChatApp:
         self.root.geometry("1000x600")
         self.root.configure(bg="#7bd8f0") 
         
-        # 🔑 SECURE KEY LOADER: Checks .env file first, then Windows System
         env_keys = {}
         if os.path.exists(".env"):
             with open(".env", "r") as f:
@@ -29,7 +28,7 @@ class AtlasChatApp:
         gemini_key = env_keys.get("GEMINI_API_KEY") or os.environ.get("GEMINI_API_KEY")
         
         if not gemini_key or not self.tomtom_api_key:
-            print("⚠️ WARNING: API keys are missing! Check your .env file layout.")
+            print(" WARNING: API keys are missing! Check your .env file layout.")
         
         # Initialize AI Client
         self.client = genai.Client(api_key=gemini_key)
@@ -133,7 +132,7 @@ class AtlasChatApp:
                 self.update_map_location(extracted_location)
             else:
                 self.display_message("Atlas", raw_reply)
-                print("⚠️ Telemetry missing: Atlas did not return a valid [COUNTRY: ...] tag this turn.")
+                print(" Telemetry missing: Atlas did not return a valid [COUNTRY: ...] tag this turn.")
                 
         except Exception as e:
             self.display_message("System Error", f"Failed to sync telemetry layout: {e}")
@@ -159,7 +158,7 @@ class AtlasChatApp:
                     lat = position["lat"]
                     lon = position["lon"]
                     
-                    print(f"🎯 TomTom API Success! Found {query_string} at Coordinates: ({lat}, {lon})")
+                    print(f" TomTom API Success! Found {query_string} at Coordinates: ({lat}, {lon})")
                     
                     self.map_widget.set_position(lat, lon)
                     self.map_widget.set_zoom(6) 
@@ -168,22 +167,22 @@ class AtlasChatApp:
                     self.map_widget.delete_all_marker()
                     self.map_widget.set_marker(lat, lon, text=query_string)
                 else:
-                    print(f"⚠️ TomTom API couldn't find a matching location for: '{query_string}'")
+                    print(f" TomTom API couldn't find a matching location for: '{query_string}'")
             else:
-                print(f"❌ TomTom API returned an error status code: {response.status_code}")
+                print(f" TomTom API returned an error status code: {response.status_code}")
                 
         except Exception as e:
-            print(f"⚠️ Telemetry network error: {e}")
+            print(f" Telemetry network error: {e}")
 
     def display_message(self, sender, text):
         """Locks/Unlocks state boxes to insert styled string dialogue text blocks."""
         self.chat_display.config(state=tk.NORMAL)
         if sender == "You":
-            self.chat_display.insert(tk.END, f"\n👤 You:\n{text}\n", "user_style")
+            self.chat_display.insert(tk.END, f"\n You:\n{text}\n", "user_style")
         elif sender == "Atlas":
-            self.chat_display.insert(tk.END, f"\n🌍 Atlas:\n{text}\n", "bot_style")
+            self.chat_display.insert(tk.END, f"\n Atlas:\n{text}\n", "bot_style")
         else:
-            self.chat_display.insert(tk.END, f"\n⚠️ {sender}: {text}\n", "error_style")
+            self.chat_display.insert(tk.END, f"\n {sender}: {text}\n", "error_style")
             
         self.chat_display.tag_config("user_style", foreground="#2980b9", font=("Arial", 11, "bold"))
         self.chat_display.tag_config("bot_style", foreground="#fb8500", font=("Arial", 11))
