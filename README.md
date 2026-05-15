@@ -1,8 +1,8 @@
-# 🌍 Atlas: Live AI Geography Guide & Mapping Bot
+## Atlas: Live AI Geography Guide & Mapping Bot
 
 Atlas is an interactive desktop application built in Python that combines advanced generative AI with real-time geospatial tracking. Users can chat with "Atlas" a very knowlegable, sharp geography scholar and watch the embedded live map instantly pan, zoom, and drop tracking markers on the exact locations discussed during the conversation.
 
-## 🚀 Features
+## Features
 
 - **Asynchronous AI Chat:** Powered by the Google Gemini API (`gemini-2.5-flash`) to deliver dynamic, highly specific geographical facts.
 - **Live Interactive Map:** Integrated `tkintermapview` render engine centered on global OpenStreetMap tilesets.
