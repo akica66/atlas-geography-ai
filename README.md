@@ -25,7 +25,7 @@ pip install google-genai tkintermapview requests
 Run the clone command to download the project files, then navigate into the folder:
 
 ```bash
-git clone [https://github.com/akica66/atlas-geography-ai.git](https://github.com/akica66/atlas-geography-ai.git)
+git clone https://github.com/akica66/atlas-geography-ai.git
 cd atlas-geography-ai
 ```
 
