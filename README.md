@@ -11,7 +11,7 @@ Atlas is an interactive desktop application built in Python that combines advanc
 
 ---
 
-## 🛠️ Installation & Setup:
+##  Installation & Setup:
 
 ### 1. Prerequisites
 Make sure you have Python installed on your system. You will also need to install the required external packages:
