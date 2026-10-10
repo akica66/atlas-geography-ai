@@ -15,8 +15,9 @@ class AtlasChatApp:
         self.root.configure(bg="#7bd8f0") 
         
         env_keys = {}
-        if os.path.exists(".env"):
-            with open(".env", "r") as f:
+        env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+        if os.path.exists(env_path):
+            with open(env_path, "r") as f:
                 for line in f:
                     cleaned_line = line.strip()
                     if "=" in cleaned_line and not cleaned_line.startswith("#"):
